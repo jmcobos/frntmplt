@@ -1,0 +1,10 @@
+<div>
+  <h4>Inicio</h4>
+</div>
+<div>
+  <h2>Texto público</h2>
+</div>
+<div [hidden]="mostrarPrivate">
+  <h2>Texto privado</h2>
+  <div *ngFor="let usuario of usuarios">{{ usuario.apellido_01 }} {{ usuario.apellido_02 }}, {{ usuario.nombre }}</div>
+</div>

@@ -1,0 +1,21 @@
+<div>
+  <h4>Identificarse</h4>
+</div>
+<div>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div [hidden]="showErrorPassword" class="alert alert-danger">El usuario no se encuentra registrado.</div>
+    <div [hidden]="showErrorNombre" class="alert alert-danger">La contraseña no es correcta.</div>
+    <div class="form-group required">
+      <label for="nombre" class="control-label">Usuario:</label>
+      <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre" #nombreText="ngModel" placeholder="Usuario" required>
+      <!--<div [hidden]="usuario.valid || usuario.pristine" class="alert alert-danger">El nombre de usuario es requerido.</div>-->
+    </div>
+    <div class="form-group required">
+      <label for="password" class="control-label">Contraseña:</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" #passwordText="ngModel" placeholder="Contraseña" required>
+      <!--  <div [hidden]="password.valid || password.pristine" class="alert alert-danger">La contraseña es requerida.</div>-->
+    </div>
+    <button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid">Identificarse</button>
+    <a class="nav-link" routerLink="/recordar">He olvidado mi contraseña</a>
+  </form>
+</div>
